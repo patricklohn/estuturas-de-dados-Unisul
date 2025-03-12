@@ -1,0 +1,80 @@
+Atividade 1 - Estruturas de Dados (Foco: Pilha Dinâmica)
+
+
+Objetivo:
+• Desenvolver o entendimento dos alunos sobre estruturas de dados (focando em pilha dinâmica) e como elas são aplicadas em um contexto prático.
+• Trabalhar em grupos, com papéis distintos, onde cada integrante pode focar em uma parte da solução, seja na lógica do algoritmo, na implementação do programa, ou na documentação.
+• Aplicar o conceito de pilha dinâmica e alocação dinâmica de objetos em um cenário realista, como o gerenciamento de compras e estoque de um supermercado.
+
+
+Caso 1: Sistema de Gerenciamento de Compras e Estoque de Supermercado (Baseado em Pilha Dinâmica)
+
+
+
+Descrição: O supermercado deseja registrar as compras dos produtos de forma que, ao determinar o preço de venda de um item, o sistema sempre recorra à última compra realizada. Para isso, será necessário armazenar as informações de cada compra e mantê-las em uma pilha dinâmica, com cada item sendo representado por um objeto. Quando uma nova compra é registrada, o preço e a quantidade de estoque serão atualizados com base na última compra.
+
+
+
+Requisitos:
+1. O programa deve permitir que o supermercado registre as informações de uma compra, incluindo:
+o Data da compra
+o Produto (Mercadoria)
+o Valor de compra
+o Valor para venda
+o Quantidade comprada
+o Quantidade em estoque
+
+
+
+2. A cada nova compra, o preço de venda será definido como o valor da última compra para o produto.
+
+
+
+3. O estoque do produto será atualizado conforme o número de unidades vendidas, sendo a quantidade vendida subtraída da última compra registrada.
+
+
+
+4. A pilha dinâmica será usada para armazenar o histórico de compras, de forma que o preço de venda e o estoque sejam sempre baseados na última compra.
+
+
+
+Exemplo: O supermercado tem o produto "mel". A cada compra de mel, o valor de venda é atualizado com o valor da última compra registrada. O estoque também é ajustado com a quantidade comprada.
+
+
+
+Papéis dentro do grupo:
+1. Desenvolvedor de Algoritmo: Responsável por estruturar o algoritmo, focando na lógica da pilha dinâmica.
+2. Desenvolvedor de Código: Responsável por implementar o algoritmo em código Java, utilizando a estrutura de pilha dinâmica.
+3. Tester: Responsável por testar o programa com dados variados, verificando o comportamento da pilha e o cálculo correto do preço de venda e do estoque.
+4. Documentador: Responsável por elaborar a documentação do código, descrevendo a implementação e os detalhes técnicos.
+
+
+
+Entregáveis da Atividade (para ambos os casos):
+
+
+
+1. Código-fonte em Java:
+o Implementação completa da pilha dinâmica.
+o O código deve estar bem estruturado, modularizado e comentado.
+o Instruções de como executar o programa.
+
+
+
+2. Relatório ou Documentação:
+o Explicação do algoritmo e estrutura de dados utilizada.
+o Descrição das funcionalidades do sistema.
+o Exemplos de entrada e saída de cada funcionalidade.
+
+
+
+3. Apresentação em grupo (5 minutos):
+o Visão geral: Breve explicação do problema e da solução.
+o Demonstração: Apresentação do funcionamento do programa, incluindo exemplos práticos de como a pilha dinâmica é utilizada.
+o Desafios enfrentados: Relato das dificuldades encontradas e como foram superadas.
+
+
+
+4. Testes de Validação:
+o Exemplo de uso do sistema, incluindo casos de sucesso e possíveis falhas.
+o Demonstração de como o sistema se comporta com entradas diferentes (em ambos os casos).
