@@ -78,23 +78,3 @@ Gerencia a interface gráfica e a lógica do sistema. Possui:
 ### Pilhas na Estrutura de Dados
 
 O sistema utiliza pilhas para gerenciar o histórico de compras de cada produto. Cada nova compra é adicionada ao topo da pilha, e o estoque é calculado somando as quantidades de todas as compras. O preço de venda é sempre obtido a partir da última compra registrada.
-
-#### Vantagens:
-- **Simplicidade**: Fácil de implementar e entender.
-- **Eficiência**: Acesso rápido ao último item inserido.
-- **Rastreabilidade**: Histórico completo de compras.
-
-### Contribuição
-
-Se você deseja contribuir para este projeto, siga os passos abaixo:
-1. Faça um fork do repositório.
-2. Crie uma branch para sua feature (`git checkout -b feature/nova-feature`).
-3. Commit suas mudanças (`git commit -m 'Adicionando nova feature'`).
-4. Push para a branch (`git push origin feature/nova-feature`).
-5. Abra um Pull Request.
-
-## Contato
-
-Se tiver dúvidas ou sugestões, entre em contato:
-- **Email**: seuemail@exemplo.com
-- **GitHub**: [seu-usuario](https://github.com/seu-usuario)
