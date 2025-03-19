@@ -1,0 +1,32 @@
+Caso 2: Atendimento em Clínica Médica
+• Descrição: Implemente uma TAD Fila para organizar o atendimento de pacientes em uma clínica médica.
+• Entrada:
+o Nome do paciente
+o Número da carteirinha
+o Prioridade (urgência, agendado, etc.)
+• Processamento:
+o Os pacientes são enfileirados na recepção, considerando a prioridade.
+o O médico chama o próximo paciente da fila para atendimento.
+o Após o atendimento, o paciente é removido da fila.
+• Saída:
+o Registro da ordem de atendimento dos pacientes.
+Papéis e Responsabilidades:
+1. Analista de Requisitos:
+o Responsável por definir os requisitos do sistema, detalhando as entradas, saídas e regras de negócio para cada caso.
+o Cria diagramas de caso de uso e fluxogramas para auxiliar na compreensão do problema.
+2. Arquiteto de Software:
+o Responsável por projetar a estrutura da TAD Fila, definindo as classes, atributos e métodos necessários.
+o Cria diagramas de classe e define a interface da TAD.
+3. Desenvolvedor de Algoritmo:
+o Responsável por implementar os algoritmos de enfileiramento e desenfileiramento, seguindo a lógica FIFO.
+o Escreve o código em pseudocódigo ou linguagem natural, detalhando os passos do algoritmo.
+4. Programador:
+o Responsável por traduzir os algoritmos em código, implementando a TAD Fila e os casos de uso.
+5. Testador:
+o Responsável por criar casos de testes para validar o funcionamento da TAD Fila e dos casos de uso.
+o Executa os testes e documenta os resultados, reportando eventuais erros.
+Entregáveis:
+(https://sourceforge.net/projects/visualg30/)
+• Algoritmos de enfileiramento e desenfileiramento (Desenvolvedor de Algoritmo) - em pseudocódigo e/ou fluxograma
+• Código da TAD Fila e casos de uso (Programador)
+• Relatório de testes (Testador)
