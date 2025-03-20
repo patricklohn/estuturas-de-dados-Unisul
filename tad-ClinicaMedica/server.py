@@ -1,12 +1,13 @@
 
-paciente = {}
-pacientesUrgentes = {}
+pacientesNaoUrgentes = []
+pacientesUrgentes = []
+pacienteAtendidos = []
 
 def menu():
-    print("Coloque a sua opção de navegação:")
+    print("\nColoque a sua opção de navegação: \n")
     print("1 - Entrada de paciente")
     print("2 - Listar pacientes")
-    print("6 - Sair ")
+    print("6 - Sair \n")
 
     opcao = input()
 
@@ -19,6 +20,21 @@ def menu():
     else:
         print("Obrigado por usar o sistema!")
 
+def adicionar_pacientes(namePaciente,numCarteirinha,sintomas,urgencia):
+    paciente = {
+        "nome": namePaciente,
+        "carteira": numCarteirinha,
+        "sintomas": sintomas,
+        "urgencia": int(urgencia)
+    }
+
+    if int(urgencia) >= 6:
+        pacientesUrgentes.append(paciente)
+    else: 
+       pacientesNaoUrgentes.append(paciente)
+
+    print("Paciente protocolado com sucesso")
+
 def entradaPaciente():
     print("Nome do paciente:")
     namePaciente = input()
@@ -29,29 +45,26 @@ def entradaPaciente():
     print("Descreva a urgencia entre: 1 - 10")
     urgencia = input() 
 
-    if int(urgencia) >= 6:
-        pacientesUrgentes[namePaciente] ={
-            "carteira": numCarteirinha,
-            "sintomas": sintomas,
-            "urgencia": urgencia
-        }
-    else: 
-        paciente[namePaciente] = {
-            "carteira": numCarteirinha,
-            "sintomas": sintomas,
-            "urgencia": urgencia
-        }
-    print("Paciente protocolado com sucesso")
+    adicionar_pacientes(namePaciente,numCarteirinha,sintomas,urgencia)
+    
     menu()
 
 def listarPacientes():
-    print("Pacientes urgentes:")
-    for key, value in pacientesUrgentes.items():
-        print(key,value)
-    print("Pacientes não urgentes:")
-    for key, value in paciente.items():
-        print(key,value)
-    menu()
+    print("Pacientes urgentes:\n")
+    for dadosPacienteUrgentes in pacientesUrgentes:
+        print(dadosPacienteUrgentes)
+    print("\n")
+
+    print("Pacientes não urgentes:\n")
+    for dadosPaciente in pacientesNaoUrgentes:
+        print(dadosPaciente) 
+    print("\n")
+
+menu()
+
+def triagem():
+    print("Chamando paciente...\n")
+
 
 print("Bem vindo ao ao sistema clinico de triagem:")
 menu()
