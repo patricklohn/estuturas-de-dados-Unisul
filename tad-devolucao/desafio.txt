@@ -1,0 +1,16 @@
+Objetivo: Aplicar o conceito de TAD Fila (FIFO - Primeiro a Entrar, Primeiro a Sair) em problemas práticos.
+Casos de Uso:
+Caso 1: Reembolso de Compras
+• Descrição: Implemente uma TAD Fila para gerenciar pedidos de reembolso de compras.
+• Entrada:
+o Número do pedido
+o Número da compra
+o Descrição da solicitação
+• Processamento:
+o Os pedidos são enfileirados pelo departamento de relacionamento com o cliente.
+o O departamento de aprovação de reembolso analisa os pedidos, definindo:
+? Decisão (aprovado/reprovado)
+? Justificativa (em caso de reprovação)
+o Após a análise, os pedidos são removidos da fila.
+• Saída:
+o Registro da análise de cada pedido.
