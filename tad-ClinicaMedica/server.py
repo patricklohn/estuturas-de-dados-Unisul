@@ -2,6 +2,8 @@
 pacientesNaoUrgentes = []
 pacientesUrgentes = []
 pacienteAtendidos = []
+intervalPaciente = 0
+pacientesAtendidos = []
 
 def menu():
     print("\nColoque a sua opção de navegação: \n")
@@ -64,6 +66,33 @@ menu()
 
 def triagem():
     print("Chamando paciente...\n")
+    if not pacientesUrgentes[0]:
+        intervalPaciente = 1
+    elif not pacientesNaoUrgentes[0]:
+        intervalPaciente = 0
+        print("Não existe pacientes na triagem:") 
+        return menu()
+    else:
+        print("Chamando paciente...\n")
+    if intervalPaciente == 0: 
+        print("Paciente urgente:", pacientesUrgentes[0].get("nome"))
+        print("Numero Carteirinha:", pacientesUrgentes[0].get("carteira"))
+        print("Sintomas reportados:", pacientesUrgentes[0].get("sintomas"))
+
+        pacienteAtendidos.append(pacientesUrgentes[0])
+        pacientesUrgentes.pop(0)
+        print("Paciente Atendido com sucesso!")
+    elif intervalPaciente == 1:
+        print("Paciente:", pacientesNaoUrgentes[0].get("nome"))
+        print("Numero:", pacientesNaoUrgentes[0].get("carteira"))
+        print("Sintomas:", pacientesNaoUrgentes[0].get("sintomas"))
+
+        pacienteAtendidos.append(pacientesNaoUrgentes[0])
+        pacientesNaoUrgentes.pop(0)
+        print("Paciente Atendido com sucesso!\n")
+    print("Triagem finalizada com sucesso!\n")
+    menu()
+    
 
 
 print("Bem vindo ao ao sistema clinico de triagem:")
