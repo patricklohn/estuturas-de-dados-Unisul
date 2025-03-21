@@ -13,6 +13,7 @@ Este é um sistema simples de triagem de pacientes escrito em **Python**. Ele pe
 ### Requisitos
 
 - Python 3 instalado no sistema
+- Intalação do colorama
 
 ### Executando o programa
 
@@ -21,6 +22,10 @@ Este é um sistema simples de triagem de pacientes escrito em **Python**. Ele pe
 3. Navegue até a pasta onde o arquivo está salvo.
 4. Execute o comando:
    ```bash
+   pip install colorama
+   ```
+5. Execute o comando: 
+   ```
    python server.py
    ```
 

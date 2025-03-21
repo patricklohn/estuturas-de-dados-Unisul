@@ -1,3 +1,5 @@
+from colorama import Fore, Back, Style, init
+init(autoreset=True)
 
 pacientesNaoUrgentes = [{'nome': 'Erick', 'carteira': '147', 'sintomas': 'Dor de cabeça', 'urgencia': 5},{'nome': 'Rafael', 'carteira': '12347', 'sintomas': 'Muita febre', 'urgencia': 4}]
 pacientesUrgentes = [{'nome': 'Patrick Lohn', 'carteira': '1234', 'sintomas': 'Muita tosse', 'urgencia': 8},{'nome': 'Andrey', 'carteira': '12345', 'sintomas': 'Gripe', 'urgencia': 8}]
@@ -7,10 +9,10 @@ intervalPaciente = 0
 
 def menu():
     print("\nColoque a sua opção de navegação: \n")
-    print("1 - Entrada de paciente")
-    print("2 - Listar pacientes")
-    print("3 - Triagem")
-    print("6 - Sair \n")
+    print(Back.BLACK+ Style.BRIGHT +  "   1 - Entrada de paciente     ")
+    print(Back.BLACK + Style.BRIGHT + "   2 - Listar pacientes        ")
+    print(Back.BLACK + Style.BRIGHT + "   3 - Triagem                 ")
+    print(Back.BLACK + Style.BRIGHT + "   6 - Sair                    " + Style.RESET_ALL + "\n")
 
     opcao = input()
 
@@ -41,54 +43,50 @@ def adicionar_pacientes(namePaciente,numCarteirinha,sintomas,urgencia):
     print("Paciente protocolado com sucesso")
 
 def entradaPaciente():
-    print("Nome do paciente:")
-    namePaciente = input()
-    print("Numero da carteirinha:")
-    numCarteirinha = input()
-    print("Descreva os sintomas:")
-    sintomas = input()
-    print("Descreva a urgencia entre: 1 - 10")
-    urgencia = input() 
+    print("\n")
+    namePaciente = input(Back.BLACK+Style.BRIGHT+  "   Nome do paciente:                 " + Style.RESET_ALL)
+    numCarteirinha = input(Back.BLACK+Style.BRIGHT+"   Numero da carteirinha:            " + Style.RESET_ALL)
+    sintomas = input(Back.BLACK+Style.BRIGHT+      "   Descreva os sintomas:             " + Style.RESET_ALL)
+    urgencia = input(Back.BLACK+Style.BRIGHT+      "   Descreva a urgencia entre: 1 - 10 " + Style.RESET_ALL) 
 
     adicionar_pacientes(namePaciente,numCarteirinha,sintomas,urgencia)
     
     menu()
 
 def listarPacientes():
-    print("Pacientes urgentes:\n")
+    print("\n" + Back.RED + Style.BRIGHT + "   Pacientes urgentes:   " + Style.RESET_ALL + "\n")
     for dadosPacienteUrgentes in pacientesUrgentes:
         print(dadosPacienteUrgentes)
-    print("\n")
 
-    print("Pacientes não urgentes:\n")
+    print(Style.RESET_ALL + "\n" + Back.WHITE + Fore.BLACK + Style.BRIGHT +"   Pacientes não urgentes:   "+ Style.RESET_ALL + "\n")
     for dadosPaciente in pacientesNaoUrgentes:
         print(dadosPaciente) 
-    print("\n")
 
-    print("Pacientes Atendidos:\n")
+    print(Style.RESET_ALL + "\n" + Back.GREEN + Style.BRIGHT + "   Pacientes Atendidos:   "+ Style.RESET_ALL + "\n")
     for dadosPaciente in pacienteAtendidos:
         print(dadosPaciente) 
-    print("\n")
+    print(Style.RESET_ALL + "\n")
 
     menu()
 
 def triagem():
     if not pacientesUrgentes and not pacientesNaoUrgentes:
-        print("Não existe pacientes na triagem:") 
+        print("\n" + Back.RED + Style.BRIGHT +"   Não existe pacientes na triagem:   " + Style.RESET_ALL + "\n") 
         return menu()
     
     if not pacientesUrgentes:
         intervalPaciente = 2
-        print("\nChamando paciente...\n")
+        print(Style.RESET_ALL + "\n" + Back.GREEN + Style.BRIGHT + "   Chamando paciente...   " + Style.RESET_ALL + "\n")
 
     elif not pacientesNaoUrgentes:
         intervalPaciente = 0
-        print("\nChamando paciente...\n")
+        print(Style.RESET_ALL + "\n" + Back.GREEN + Style.BRIGHT + "   Chamando paciente...   " + Style.RESET_ALL + "\n")
 
     else:
         intervalPaciente = 0
 
     if intervalPaciente == 0 or intervalPaciente == 1: 
+        print(Style.RESET_ALL + "\n" + Back.GREEN + Style.BRIGHT + "   Chamando paciente...   " + Style.RESET_ALL + "\n")
         print("Paciente urgente:", pacientesUrgentes[0].get("nome"))
         print("Numero Carteirinha:", pacientesUrgentes[0].get("carteira"))
         print("Sintomas reportados:", pacientesUrgentes[0].get("sintomas"))
@@ -96,18 +94,19 @@ def triagem():
         pacienteAtendidos.append(pacientesUrgentes[0])
         pacientesUrgentes.pop(0)
         intervalPaciente += 1
-        print("Paciente Atendido com sucesso!")
+        print(Style.RESET_ALL + "\n" + Back.GREEN + Style.BRIGHT + "   Paciente Atendido com sucesso!   " + Style.RESET_ALL + "\n")
         return menu()
 
     elif intervalPaciente == 2:
+        print(Style.RESET_ALL + "\n" + Back.GREEN + Style.BRIGHT + "   Chamando paciente...   " + Style.RESET_ALL + "\n")
         print("Paciente:", pacientesNaoUrgentes[0].get("nome"))
         print("Numero:", pacientesNaoUrgentes[0].get("carteira"))
         print("Sintomas:", pacientesNaoUrgentes[0].get("sintomas"))
 
         pacienteAtendidos.append(pacientesNaoUrgentes[0])
         pacientesNaoUrgentes.pop(0)
-        internalPaciente = 0
-        print("Paciente Atendido com sucesso!\n")
+        intervalPaciente = 0
+        print(Style.RESET_ALL + "\n" + Back.GREEN + Style.BRIGHT + "   Paciente Atendido com sucesso!   " + Style.RESET_ALL + "\n")
         return menu()
         
     else:
